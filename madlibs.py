@@ -45,12 +45,11 @@ def greet_person():
 def show_madlib_form():
     """Ask if user wants to play a game."""
 
-    user_reply = input("Do you want to play a game? Yes/No:")
-
-    if user_reply == 'Yes': 
+# How do I call the value variables from complimen.html to use here? 
+    if compliment.value == 'yes': 
         return render_template("game.html")
 
-    else: 
+    elif compliment.value == 'no':
         return render_template("goodbye.html")
 
 

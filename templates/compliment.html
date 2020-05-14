@@ -5,6 +5,10 @@
     </head>
 
     <body>
+        <p>
+            {{person}}, you're {{compliment}} today!
+        </p>
+        <br>
         <form>
             Do you want to play a game?
             <br>
@@ -15,12 +19,10 @@
             <input type="radio" name="game" value="no">
             <label for="no">No</label><br>
 
-            <input type="radio" name="game" value="maybe">
-            <label for="maybe">Maybe</label>
         </form>
         
         <form action="/game" method="GET">
-            <input type="submit">Submit
+            <input type="submit">
         </form>
 
 
