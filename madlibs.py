@@ -47,10 +47,13 @@ def show_madlib_form():
 
 # How do I call the radio button's values from compliment.html to use here? 
 # Error msg in browser: compliment not defined. 
-    if compliment.value == 'yes': 
+
+    choice = request.args.get("play")
+
+    if choice == 'yes': 
         return render_template("game.html")
 
-    elif compliment.value == 'no':
+    else:
         return render_template("goodbye.html")
 
 
@@ -59,7 +62,19 @@ def show_madlib_form():
 def show_madlib():
     """Show MadLibs-style story completed with user input."""
 
-    return render_template("madlib.html")
+    # Retrieve user input values for person, color, noun, adj 
+    # from game.html
+
+    person = request.args.get("person")
+    color = request.args.get("color")
+    noun = request.args.get("noun")
+    adj = request.args.get("adj")
+
+    return render_template("madlib.html", 
+                            person = person,
+                            color = color, 
+                            noun = noun, 
+                            adj = adjective)
 
 
 if __name__ == '__main__':
