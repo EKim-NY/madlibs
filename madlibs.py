@@ -45,7 +45,8 @@ def greet_person():
 def show_madlib_form():
     """Ask if user wants to play a game."""
 
-# How do I call the value variables from complimen.html to use here? 
+# How do I call the radio button's values from compliment.html to use here? 
+# Error msg in browser: compliment not defined. 
     if compliment.value == 'yes': 
         return render_template("game.html")
 
