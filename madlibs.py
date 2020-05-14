@@ -45,16 +45,27 @@ def greet_person():
 def show_madlib_form():
     """Ask if user wants to play a game."""
 
-# How do I call the radio button's values from compliment.html to use here? 
-# Error msg in browser: compliment not defined. 
-
     choice = request.args.get("play")
 
-    if choice == 'yes': 
+    # Still returning Type error in browser. 
+    print("\n","\n","\n",choice, dir(request.args.keys))
+
+    # RESULT: choice is assigned a Nonetype
+    # if choice == "no": 
+    #     return render_template("goodbye.html")
+
+    # elif choice == "yes": 
+    #     return render_template("game.html")
+
+
+    # RESULT: Either choice renders goodbye.html
+    # UPDATE: Now it returns the same Type error. 
+    if choice == "yes": 
         return render_template("game.html")
 
-    else:
-        return render_template("goodbye.html")
+    elif choice == "no": 
+        return render_template("goodbye.html") 
+
 
 
 
